@@ -259,8 +259,6 @@ app.get("/demote/:username", async (req, res) => {
       { $set: { user_type: "user" } }
     );
     res.redirect("/admin");
-    console.log(err);
-    res.send("Error promoting user");
 });
 
 app.get('/logout', (req,res) => {
