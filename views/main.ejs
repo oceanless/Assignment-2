@@ -1,0 +1,14 @@
+<%- include("templates/header") %>
+
+<div class="container-fluid">
+  <h1 style="text-align: center;">Hello, <%= username %>!</h1>
+</div>
+
+<div class="container">
+  <div class="d-grid gap-1 col-2 mx-auto">
+    <a class="btn btn-primary btn-lg" href="/members" role="button">Go to Members Area</a>
+    <a class="btn btn-primary btn-lg" href="/logout" role="button">Logout</a>
+  </div>
+</div>
+
+<%- include("templates/footer") %>

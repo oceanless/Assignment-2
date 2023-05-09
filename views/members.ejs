@@ -1,0 +1,36 @@
+<%- include("templates/header") %>
+
+<div class="container-fluid">
+  <h1 style="padding-left: 30px">Hello, <%= username %>!</h1>
+</div>
+<div class="container-fluid">
+  <h2 style="padding-left: 30px">Here are some fun picture!</h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 bordered-column">
+      <img
+        img src='/angy.jpg'
+        class="img-responsive uniform-image"
+        alt="angwy"
+      />
+    </div>
+    <div class="col-sm-4 bordered-column">
+      <img 
+      src='/MEOWSHY.jpg' 
+      class="img-responsive uniform-image" 
+      alt="shy cat" 
+      />
+    </div>
+    <div class="col-sm-4 bordered-column">
+      <img
+        src='/smurfing.jpg'
+        class="img-responsive uniform-image"
+        alt="smurfingggg"
+      />
+    </div>
+  </div>
+
+  <a class="btn btn-primary btn-lg" href="/logout" role="button">Log out</a>
+
+<%- include("templates/footer") %>
