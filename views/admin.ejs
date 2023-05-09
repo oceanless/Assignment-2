@@ -9,16 +9,10 @@
 
 <div class="container">
   <% users.forEach(user => { %>
-    <div class="row">
-      <div class="col-sm-8">
-        <p><%= user.username %> (<%= user.user_type %>)</p>
-      </div>
-      <div class="col-sm-4">
-          <a href="/promote/<%= user.username %>" class="btn btn-danger">Promote to admin</a>
-          <a href="/demote/<%= user.username %>" class="btn btn-success">Demote to user</a>
-      </div>
-    </div>
+    <%- include("templates/user", { user: user }) %>
   <% }) %>
 </div>
 
 <%- include("templates/footer") %>
+
+
