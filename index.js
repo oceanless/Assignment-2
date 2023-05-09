@@ -59,7 +59,8 @@ function isAdmin(req) {
 
 function adminValidation(req, res, next) {
   if (!isAdmin(req)) {
-    res.render("admin_error");
+    res.status(403)
+    res.render("403");
     return;
   } else {
     next();
@@ -244,30 +245,22 @@ app.get('/admin', sessionValidation, adminValidation, async(req, res) => {
 
 app.get("/promote/:username", async (req, res) => {
   var username = req.params.username;
-  try {
     await userCollection.findOneAndUpdate(
       { username: username },
       { $set: { user_type: "admin" } }
     );
     res.redirect("/admin");
-  } catch (err) {
-    console.log(err);
-    res.send("Error promoting user");
-  }
 });
 
 app.get("/demote/:username", async (req, res) => {
   var username = req.params.username;
-  try {
     await userCollection.findOneAndUpdate(
       { username: username },
       { $set: { user_type: "user" } }
     );
     res.redirect("/admin");
-  } catch (err) {
     console.log(err);
     res.send("Error promoting user");
-  }
 });
 
 app.get('/logout', (req,res) => {
